@@ -19,11 +19,15 @@ public class CommandResult {
     /** The application should exit. */
     private final boolean exit;
 
+    /** Command results in entering Tutorial mode. */
+    private final boolean isTutorialMode;
+
     /**
      * Constructs a {@code CommandResult} with the specified fields.
      */
-    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit) {
+    public CommandResult(String feedbackToUser, boolean isTutorialMode, boolean showHelp, boolean exit) {
         this.feedbackToUser = requireNonNull(feedbackToUser);
+        this.isTutorialMode = isTutorialMode;
         this.showHelp = showHelp;
         this.exit = exit;
     }
@@ -33,7 +37,15 @@ public class CommandResult {
      * and other fields set to their default value.
      */
     public CommandResult(String feedbackToUser) {
-        this(feedbackToUser, false, false);
+        this(feedbackToUser, false, false, false);
+    }
+
+    /**
+     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser} and {@code isTutorialMode},
+     * and other fields set to their default value.
+     */
+    public CommandResult(String feedbackToUser, boolean isTutorialMode) {
+        this(feedbackToUser, isTutorialMode, false, false);
     }
 
     public String getFeedbackToUser() {
@@ -46,6 +58,10 @@ public class CommandResult {
 
     public boolean isExit() {
         return exit;
+    }
+
+    public boolean isTutorialMode() {
+        return isTutorialMode;
     }
 
     @Override
@@ -61,19 +77,21 @@ public class CommandResult {
 
         CommandResult otherCommandResult = (CommandResult) other;
         return feedbackToUser.equals(otherCommandResult.feedbackToUser)
+                && isTutorialMode == otherCommandResult.isTutorialMode
                 && showHelp == otherCommandResult.showHelp
                 && exit == otherCommandResult.exit;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(feedbackToUser, showHelp, exit);
+        return Objects.hash(feedbackToUser, isTutorialMode, showHelp, exit);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .add("feedbackToUser", feedbackToUser)
+                .add("isTutorialMode", isTutorialMode)
                 .add("showHelp", showHelp)
                 .add("exit", exit)
                 .toString();
