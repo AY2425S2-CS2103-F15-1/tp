@@ -21,6 +21,7 @@ public class Student {
     private final Phone phone;
     private final Email email;
     private final TelegramHandle handle;
+    private final Remark remark;
 
     // Data fields
     private Set<Tutorial> tutorials;
@@ -28,15 +29,20 @@ public class Student {
     /**
      * Every field must be present and not null.
      */
-    public Student(Name name, StudentID studentId, Phone phone, Email email, TelegramHandle handle,
+    public Student(Name name, StudentID studentId, Phone phone, Email email, Remark remark, TelegramHandle handle,
                     Set<Tutorial> tutorials) {
         requireAllNonNull(name, studentId, phone, email, handle, tutorials);
         this.name = name;
         this.studentId = studentId;
         this.phone = phone;
         this.email = email;
+        this.remark = remark;
         this.handle = handle;
         this.tutorials = tutorials;
+    }
+
+    public Remark getRemark() {
+        return remark;
     }
 
     public Name getName() {
@@ -98,7 +104,7 @@ public class Student {
      * Returns a clone of the current student.
      */
     public Student clone() {
-        return new Student(name, studentId, phone, email, handle, tutorials);
+        return new Student(name, studentId, phone, email, remark, handle, tutorials);
     }
 
     /**
