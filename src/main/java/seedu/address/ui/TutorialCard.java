@@ -46,7 +46,7 @@ public class TutorialCard extends UiPart<Region> {
     public TutorialCard(TutorialWithStudents tutorialWithStudents, int displayedIndex) {
         super(FXML);
         this.tutorialWithStudents = tutorialWithStudents;
-        id.setText(displayedIndex + ". ");
+        id.setText(displayedIndex + "");
         name.setText(tutorialWithStudents.getTutorial().name());
         List<Student> studentList = tutorialWithStudents.getStudents();
         studentList.sort(Comparator.comparing(student -> student.getName().fullName));
