@@ -42,7 +42,7 @@ public class LogicManagerTest {
     public Path temporaryFolder;
 
     private Model model = new ModelManager();
-    private Logic logic;
+    private LogicManager logic;
 
     @BeforeEach
     public void setUp() {
