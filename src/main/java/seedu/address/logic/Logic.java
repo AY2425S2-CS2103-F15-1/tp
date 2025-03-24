@@ -20,9 +20,9 @@ import seedu.address.model.tutorial.TutorialWithStudents;
 import seedu.address.storage.Storage;
 
 /**
- * The main LogicManager of the app.
+ * The main Logic of the app.
  */
-public class LogicManager {
+public class Logic {
   public static final String FILE_OPS_ERROR_FORMAT =
       "Could not save data due to the following error: %s";
 
@@ -30,17 +30,17 @@ public class LogicManager {
       "Could not save data to file %s due to "
       + "insufficient permissions to write to the file or the folder.";
 
-  private final Logger logger = LogsCenter.getLogger(LogicManager.class);
+  private final Logger logger = LogsCenter.getLogger(Logic.class);
 
   private final Model model;
   private final Storage storage;
   private final AddressBookParser addressBookParser;
 
   /**
-   * Constructs a {@code LogicManager} with the given {@code Model} and
+   * Constructs a {@code Logic} with the given {@code Model} and
    * {@code Storage}.
    */
-  public LogicManager(Model model, Storage storage) {
+  public Logic(Model model, Storage storage) {
     this.model = model;
     this.storage = storage;
     addressBookParser = new AddressBookParser();
