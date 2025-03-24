@@ -46,6 +46,17 @@ public class LogicManager {
     addressBookParser = new AddressBookParser();
   }
 
+  /**
+   * Executes the command and returns the result.
+   *
+   * @param commandText
+   *            The command as entered by the user.
+   * @return the result of the command execution.
+   * @throws CommandException
+   *             If an error occurs during command execution.
+   * @throws ParseException
+   *             If an error occurs during parsing.
+   */
   public CommandResult execute(String commandText)
       throws CommandException, ParseException {
     logger.info("----------------[USER COMMAND][" + commandText + "]");
@@ -67,12 +78,19 @@ public class LogicManager {
     return commandResult;
   }
 
+  /**
+   * Returns the AddressBook.
+   *
+   * @see seedu.address.model.Model#getAddressBook()
+   */
   public ReadOnlyAddressBook getAddressBook() { return model.getAddressBook(); }
 
+  /** Returns an unmodifiable view of the filtered list of students */
   public ObservableList<Student> getFilteredStudentList() {
     return model.getFilteredStudentList();
   }
 
+  /** Returns an unmodifiable view of the filtered list of tutorials */
   public ObservableList<Tutorial> getFilteredTutorialList() {
     return model.getFilteredTutorialList();
   }
@@ -82,12 +100,21 @@ public class LogicManager {
     return model.getFilteredTutorialWithStudents();
   }
 
+  /**
+   * Returns the user prefs' address book file path.
+   */
   public Path getAddressBookFilePath() {
     return model.getAddressBookFilePath();
   }
 
+  /**
+   * Returns the user prefs' GUI settings.
+   */
   public GuiSettings getGuiSettings() { return model.getGuiSettings(); }
 
+  /**
+   * Set the user prefs' GUI settings.
+   */
   public void setGuiSettings(GuiSettings guiSettings) {
     model.setGuiSettings(guiSettings);
   }
