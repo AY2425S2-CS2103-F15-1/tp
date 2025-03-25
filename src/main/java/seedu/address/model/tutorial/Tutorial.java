@@ -22,6 +22,15 @@ public record Tutorial(String name, List<Assignment> assignments) implements Ide
         }
     }
 
+    public void addAssignment(Assignment assignment) {
+        Objects.requireNonNull(assignment);
+        assignments.add(assignment);
+    }
+
+    public boolean hasAssignment(Assignment assignment) {
+        return assignments.contains(assignment);
+    }
+
     /**
      * Checks whether the given name is valid
      */
