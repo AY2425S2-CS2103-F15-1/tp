@@ -15,6 +15,14 @@ public record Tutorial(String name, List<Assignment> assignments) implements Ide
         this(name, new ArrayList<>());
     }
 
+    /**
+     * Creates a new {@code Tutorial} object
+     *
+     * @param name
+     *            name of the tutorial
+     * @param assignments
+     *            list of assignments
+     */
     public Tutorial {
         Objects.requireNonNull(name);
         if (!isValidName(name)) {
@@ -22,6 +30,12 @@ public record Tutorial(String name, List<Assignment> assignments) implements Ide
         }
     }
 
+    /**
+     * Adds assignments to tutorial
+     *
+     * @param assignment
+     *            Assignment to add
+     */
     public void addAssignment(Assignment assignment) {
         Objects.requireNonNull(assignment);
         assignments.add(assignment);

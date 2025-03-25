@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -32,8 +32,9 @@ public class ParserUtil {
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading
      * and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the specified index is invalid (not non-zero unsigned
-     *                        integer).
+     * @throws ParseException
+     *             if the specified index is invalid (not non-zero unsigned
+     *             integer).
      */
     public static Index parseIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
@@ -47,7 +48,8 @@ public class ParserUtil {
      * Parses a {@code String name} into a {@code Name}. Leading and trailing
      * whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code name} is invalid.
+     * @throws ParseException
+     *             if the given {@code name} is invalid.
      */
     public static Name parseName(String name) throws ParseException {
         requireNonNull(name);
@@ -62,7 +64,8 @@ public class ParserUtil {
      * Parses a {@code String phone} into a {@code Phone}. Leading and trailing
      * whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code phone} is invalid.
+     * @throws ParseException
+     *             if the given {@code phone} is invalid.
      */
     public static Phone parsePhone(String phone) throws ParseException {
         requireNonNull(phone);
@@ -77,7 +80,8 @@ public class ParserUtil {
      * Parses a {@code String email} into an {@code Email}. Leading and trailing
      * whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code email} is invalid.
+     * @throws ParseException
+     *             if the given {@code email} is invalid.
      */
     public static Email parseEmail(String email) throws ParseException {
         requireNonNull(email);
@@ -92,7 +96,8 @@ public class ParserUtil {
      * Parses a {@code String tag} into a {@code Tag}. Leading and trailing
      * whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code tag} is invalid.
+     * @throws ParseException
+     *             if the given {@code tag} is invalid.
      */
     public static Tutorial parseTutorial(String tutorial) throws ParseException {
         requireNonNull(tutorial);
@@ -119,7 +124,8 @@ public class ParserUtil {
      * Parses a {@code String student ID} into an {@code StudentID}. Leading and
      * trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code address} is invalid.
+     * @throws ParseException
+     *             if the given {@code address} is invalid.
      */
     public static StudentID parseStudentId(String studentId) throws ParseException {
         requireNonNull(studentId);
@@ -134,7 +140,8 @@ public class ParserUtil {
      * Parses a {@code String Telegram handle} into an {@code TelegramHandle}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code address} is invalid.
+     * @throws ParseException
+     *             if the given {@code address} is invalid.
      */
     public static TelegramHandle parseTelegramHandle(String handle) throws ParseException {
         requireNonNull(handle);
@@ -145,14 +152,23 @@ public class ParserUtil {
         return new TelegramHandle(trimmedHandle);
     }
 
-
+    /**
+     * Parses datetime string into {@link LocalDateTime} while supporting a few
+     * formats of date time
+     *
+     * @param input
+     * @return
+     */
     public static LocalDateTime parseDateTime(String input) {
-        final List<DateTimeFormatter> formatters = List.of(
-            DateTimeFormatter.ISO_DATE_TIME,                      // 2023-03-15T10:15:30
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")   // 2023-03-15 10:15:30
+        final List<DateTimeFormatter> formatters = List.of(DateTimeFormatter.ISO_DATE_TIME, // 2023-03-15T10:15:30
+                        DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss") // 2023-03-15 10:15:30
         );
 
-        return formatters.stream().map(formatter -> LocalDateTime.parse(input, formatter)).findAny()
-            .orElseThrow(() -> new IllegalArgumentException("Unknown date format"));
+        return formatters.stream()
+                        // The default behavior makes it such that 31 Feb will be rounded down to 28
+                        // feb. With STRICT style, 31 feb will be rejected
+                        .map(f -> f.withResolverStyle(ResolverStyle.STRICT))
+                        .map(formatter -> LocalDateTime.parse(input, formatter)).findAny().orElseThrow((
+                        ) -> new IllegalArgumentException("Unknown date format"));
     }
 }
