@@ -1,6 +1,8 @@
 package seedu.address.storage;
 
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,13 +17,13 @@ import seedu.address.model.tutorial.Assignment;
 class JsonAdaptedAssignment {
 
     private final String name;
-    private final Date dueDate;
+    private final LocalDateTime dueDate;
 
     /**
      * Constructs a {@code JsonAdaptedStudent} with the given student details.
      */
     @JsonCreator
-    public JsonAdaptedAssignment(@JsonProperty("name") String name, @JsonProperty("dueDate") Date dueDate) {
+    public JsonAdaptedAssignment(@JsonProperty("name") String name, @JsonProperty("dueDate") LocalDateTime dueDate) {
         this.name = name;
         this.dueDate = dueDate;
     }
@@ -30,7 +32,7 @@ class JsonAdaptedAssignment {
      * Converts a given {@code Student} into this class for Jackson use.
      */
     public JsonAdaptedAssignment(Assignment source) {
-        this(source.name(), source.dueDate());
+        this(source.name(), source.dueDate().orElse(null));
     }
 
     /**
@@ -42,7 +44,7 @@ class JsonAdaptedAssignment {
      *             student.
      */
     public Assignment toModelType() throws IllegalValueException {
-        return new Assignment(name, dueDate);
+        return new Assignment(name, Optional.ofNullable(dueDate));
     }
 
 }
