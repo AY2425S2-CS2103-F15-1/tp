@@ -15,14 +15,6 @@ import seedu.address.model.tutorial.Tutorial;
 public class AddTutorialCommandParser implements Parser<AddTutorialCommand> {
 
     /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values
-     * in the given {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
-    }
-
-    /**
      * Parses the given {@code String} of arguments in the context of the
      * AddTutorialCommand and returns an AddTutorialCommand object for execution.
      *
