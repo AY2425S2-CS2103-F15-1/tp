@@ -169,6 +169,18 @@ Format: `tutorial add NAME`
 Examples:
 
 - `tutorial add cs2103-f15`
+- 
+### Renaming a tutorial: `tutorial rename`
+
+Renames a tutorial slot in the address book.
+
+Format: `tutorial rename OLD_TUTORIAL_NAME NEW_TUTORIAL_NAME`
+
+- `NEW_NAME` can contain only: alphanumeric characters, underscore and hyphen.
+
+Examples:
+
+- `tutorial rename cs2103-f15 CS2103-F14`
 
 ### Deleting a tutorial: `tutorial delete`
 

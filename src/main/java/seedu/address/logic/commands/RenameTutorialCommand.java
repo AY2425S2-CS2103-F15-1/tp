@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -26,13 +25,13 @@ public class RenameTutorialCommand extends Command {
     public static final String COMMAND_WORD = "rename";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Renames a tutorial. "
-                    + "Parameters: INDEX (must be a positive integer) " + "n/NEW_NAME";
+                    + "Parameters: OLD_TUTORIAL_NAME " + "NEW_TUTORIAL_NAME";
 
     public static final String MESSAGE_RENAME_TUTORIAL_SUCCESS = "Renamed Tutorial: %1$s";
     public static final String MESSAGE_INVALID_TUTORIAL = "Invalid tutorial name supplied.";
     public static final String MESSAGE_DUPLICATE_TUTORIAL = "This tutorial already exists in the address book.";
 
-    private final Index index;
+    private final Tutorial tutorialToRename;
     private final String newName;
 
     /**
@@ -41,11 +40,11 @@ public class RenameTutorialCommand extends Command {
      * @param newName
      *            name to rename the tutorial with
      */
-    public RenameTutorialCommand(Index index, String newName) {
-        requireNonNull(index);
+    public RenameTutorialCommand(Tutorial tutorialToRename, String newName) {
+        requireNonNull(tutorialToRename);
         requireNonNull(newName);
 
-        this.index = index;
+        this.tutorialToRename = tutorialToRename;
         this.newName = newName;
     }
 
@@ -53,16 +52,11 @@ public class RenameTutorialCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
 
         requireNonNull(model);
-        List<Tutorial> lastShownList = model.getFilteredTutorialList();
 
-        if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
-        }
-
-        Tutorial tutorialToRename = lastShownList.get(index.getZeroBased());
-        if (!Tutorial.isValidName(newName)) {
+        if (!Tutorial.isValidName(newName) || !model.hasTutorial(tutorialToRename)) {
             throw new CommandException(MESSAGE_INVALID_TUTORIAL);
         }
+
         Tutorial renamedTutorial = new Tutorial(newName);
         tutorialToRename.attendances().forEach(renamedTutorial::addAttendance);
 
