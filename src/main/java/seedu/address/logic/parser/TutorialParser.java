@@ -13,6 +13,7 @@ import seedu.address.logic.commands.DeleteStudentFromTutorialCommand;
 import seedu.address.logic.commands.DeleteTutorialCommand;
 import seedu.address.logic.commands.FindTutorialCommand;
 import seedu.address.logic.commands.ListTutorialCommand;
+import seedu.address.logic.commands.RenameTutorialCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
@@ -30,6 +31,7 @@ public class TutorialParser implements Parser<Command> {
         subcmds.put(AddTutorialCommand.COMMAND_WORD, new AddTutorialCommandParser());
         subcmds.put(ListTutorialCommand.COMMAND_WORD, new ListTutorialCommandParser());
         subcmds.put(DeleteTutorialCommand.COMMAND_WORD, new DeleteTutorialCommandParser());
+        subcmds.put(RenameTutorialCommand.COMMAND_WORD, new RenameTutorialCommandParser());
         subcmds.put(FindTutorialCommand.COMMAND_WORD, new FindTutorialCommandParser());
 
         // Edit tutorials.
