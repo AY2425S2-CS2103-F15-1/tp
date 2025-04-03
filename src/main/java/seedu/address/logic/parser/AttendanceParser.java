@@ -47,4 +47,8 @@ public class AttendanceParser implements Parser<Command> {
 
         return subcmds.get(cmd[0]).parse(rest);
     }
+
+    public String getUsage() {
+        return usage;
+    }
 }
