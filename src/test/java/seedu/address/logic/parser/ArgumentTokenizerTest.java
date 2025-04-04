@@ -14,15 +14,6 @@ public class ArgumentTokenizerTest {
     private final Prefix dashT = new Prefix("-t");
     private final Prefix hatQ = new Prefix("^Q");
 
-    @Test
-    public void tokenize_emptyArgsString_noValues() {
-        String argsString = "  ";
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(argsString, pSlash);
-
-        assertPreambleEmpty(argMultimap);
-        assertArgumentAbsent(argMultimap, pSlash);
-    }
-
     private void assertPreamblePresent(ArgumentMultimap argMultimap, String expectedPreamble) {
         assertEquals(expectedPreamble, argMultimap.getPreamble());
     }
@@ -55,6 +46,15 @@ public class ArgumentTokenizerTest {
     }
 
     @Test
+    public void tokenize_emptyArgsString_noValues() {
+        String argsString = "  ";
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(argsString, pSlash);
+
+        assertPreambleEmpty(argMultimap);
+        assertArgumentAbsent(argMultimap, pSlash);
+    }
+
+    @Test
     public void tokenize_noPrefixes_allTakenAsPreamble() {
         String argsString = "  some random string /t tag with leading and trailing spaces ";
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(argsString);
@@ -62,7 +62,6 @@ public class ArgumentTokenizerTest {
         // Same string expected as preamble, but leading/trailing spaces should be
         // trimmed
         assertPreamblePresent(argMultimap, argsString.trim());
-
     }
 
     @Test
@@ -78,7 +77,6 @@ public class ArgumentTokenizerTest {
         argMultimap = ArgumentTokenizer.tokenize(argsString, pSlash);
         assertPreambleEmpty(argMultimap);
         assertArgumentPresent(argMultimap, pSlash, "Argument value");
-
     }
 
     @Test
@@ -149,5 +147,4 @@ public class ArgumentTokenizerTest {
         assertNotEquals(aaa, "aaa");
         assertNotEquals(aaa, new Prefix("aab"));
     }
-
 }
