@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Optional;
 
 /**
- * Represents the status of a submission
+ * Represents the status of a submission.
  */
 public enum SubmissionStatus {
     NOT_SUBMITTED, SUBMITTED, GRADED;
 
     /**
-     * Creates a {@link SubmissionStatus} enum based on string value
+     * Creates a {@link SubmissionStatus} enum based on string value.
      */
     public static SubmissionStatus parse(String value) {
         var map = new HashMap<String, SubmissionStatus>();

@@ -8,7 +8,7 @@ import seedu.address.logic.commands.ListAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new ListAttendanceCommand object
+ * Parses input arguments and creates a new ListAttendanceCommand object.
  */
 public class ListAttendanceCommandParser implements Parser<ListAttendanceCommand> {
 

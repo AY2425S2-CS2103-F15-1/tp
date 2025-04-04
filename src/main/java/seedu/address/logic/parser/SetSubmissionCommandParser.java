@@ -13,7 +13,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.submission.SubmissionStatus;
 
 /**
- * Parses input arguments and creates a new {@link SetSubmissionCommand} object
+ * Parses input arguments and creates a new {@link SetSubmissionCommand} object.
  */
 public class SetSubmissionCommandParser implements Parser<SetSubmissionCommand> {
 

@@ -14,7 +14,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
  * Parses input arguments and creates a new {@link Command} object for
- * attendance
+ * attendance.
  */
 public class AttendanceParser implements Parser<Command> {
 

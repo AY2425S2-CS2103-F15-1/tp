@@ -34,7 +34,7 @@ public class JsonSerializableAddressBook {
     private final List<JsonAdaptedAssignment> assignments;
 
     /**
-     * Constructs a {@link JsonSerializableAddressBook}
+     * Constructs a {@link JsonSerializableAddressBook}.
      */
     @JsonCreator
     public JsonSerializableAddressBook(@JsonProperty("students") List<JsonAdaptedStudent> students,

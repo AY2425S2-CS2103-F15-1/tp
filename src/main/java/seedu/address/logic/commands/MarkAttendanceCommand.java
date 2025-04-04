@@ -44,7 +44,7 @@ public class MarkAttendanceCommand extends Command {
 
     /**
      * Creates a {@link MarkAttendanceCommand} to mark the specified attendance
-     * {@code Attendance}
+     * {@code Attendance}.
      */
     public MarkAttendanceCommand(int week, List<Index> indices) {
         this.week = week;

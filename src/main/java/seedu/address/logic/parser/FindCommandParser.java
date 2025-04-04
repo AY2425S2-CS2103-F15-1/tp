@@ -13,7 +13,7 @@ import seedu.address.model.student.NameContainsKeywordsPredicate;
 import seedu.address.model.tutorial.StudentContainsTutorialKeywordsPredicate;
 
 /**
- * Parses input arguments and creates a new FindCommand object
+ * Parses input arguments and creates a new FindCommand object.
  */
 public class FindCommandParser implements Parser<FindCommand> {
 

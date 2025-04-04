@@ -29,7 +29,7 @@ public class ExportTutorialsCommand extends Command {
     private List<Tutorial> toExport;
 
     /**
-     * Creates a {@link ExportStudentsCommand} to export all students
+     * Creates a {@link ExportStudentsCommand} to export all students.
      */
     public ExportTutorialsCommand() {
     }

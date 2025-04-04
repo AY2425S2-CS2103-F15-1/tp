@@ -11,7 +11,8 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Parses input arguments and creates a new {@link ExportStudentsCommand} object
+ * Parses input arguments and creates a new {@link ExportStudentsCommand}
+ * object.
  */
 public class ExportStudentsCommandParser implements Parser<ExportStudentsCommand> {
 

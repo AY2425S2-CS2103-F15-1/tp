@@ -11,7 +11,7 @@ import seedu.address.model.tutorial.Tutorial;
 import seedu.address.model.uniquelist.Identifiable;
 
 /**
- * Represents an attendance record
+ * Represents an attendance record.
  */
 public record Attendance(Tutorial tutorial, Student student,
                 List<Integer> attendances) implements Identifiable<Attendance> {
@@ -46,7 +46,7 @@ public record Attendance(Tutorial tutorial, Student student,
     }
 
     /**
-     * Marks or unmarks attendance for the specific week
+     * Marks or unmarks attendance for the specific week.
      *
      * @param week
      *            Week of attendance

@@ -26,7 +26,7 @@ public class AddTutorialCommand extends Command {
     private final Tutorial toAdd;
 
     /**
-     * Creates an {@link AddTutorialCommand} to add the specified {@code Tutorial}
+     * Creates an {@link AddTutorialCommand} to add the specified {@code Tutorial}.
      */
     public AddTutorialCommand(Tutorial tutorial) {
         requireNonNull(tutorial);

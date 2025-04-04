@@ -29,7 +29,7 @@ import seedu.address.model.uniquelist.exceptions.DuplicateItemException;
 import seedu.address.model.uniquelist.exceptions.ItemNotFoundException;
 
 /**
- * Wraps all data at the address-book level
+ * Wraps all data at the address-book level.
  */
 public class AddressBook implements ReadOnlyAddressBook {
 
@@ -57,7 +57,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Makes a copy of an address book
+     * Makes a copy of an address book.
      */
     public AddressBook(ReadOnlyAddressBook toBeCopied) {
         this();
@@ -173,14 +173,14 @@ public class AddressBook implements ReadOnlyAddressBook {
     //// Tutorial operations
 
     /**
-     * Adds a tutorial slot
+     * Adds a tutorial slot.
      */
     public void addTutorial(Tutorial tutorial) {
         tutorials.add(new Tutorial(tutorial));
     }
 
     /**
-     * Deletes a tutorial slot
+     * Deletes a tutorial slot.
      */
     public void removeTutorial(Tutorial tutorial) {
         removeTutorialFromSubmissions(tutorial);
@@ -198,7 +198,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Deletes a tutorial from all students that were allocated to it
+     * Deletes a tutorial from all students that were allocated to it.
      */
     public void removeTutorialFromStudents(Tutorial tutorial) {
         List<Student> currentList = this.getStudentList();
@@ -241,7 +241,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Checks whether tutorial exists in the address book
+     * Checks whether tutorial exists in the address book.
      */
     public boolean hasTutorial(Tutorial tutorial) {
         requireNonNull(tutorial);
@@ -264,7 +264,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Adds a student to tutorial
+     * Adds a student to tutorial.
      */
     public void addStudentToTutorial(Tutorial tutorial, Student student) throws ItemNotFoundException {
         assert tutorials.containsIdentity(tutorial);
@@ -295,7 +295,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Removes a student from tutorial
+     * Removes a student from tutorial.
      */
     public void removeStudentFromTutorial(Tutorial tutorial, Student student) throws ItemNotFoundException {
         assert tutorials.containsIdentity(tutorial);
@@ -322,7 +322,7 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     /**
      * Adds an assignment to the addressbook, the tutorial information should be
-     * within the assignment object
+     * within the assignment object.
      */
     public void addAssignment(Assignment assignment) throws ItemNotFoundException, DuplicateItemException {
         requireNonNull(assignment);
@@ -352,7 +352,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Removes assignment from the addressbook
+     * Removes assignment from the addressbook.
      */
     public void removeAssignment(Assignment assignment) throws ItemNotFoundException {
         requireNonNull(assignment);
@@ -390,7 +390,8 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Sets submission status on a submission, identified by assignment, and student
+     * Sets submission status on a submission, identified by assignment, and
+     * student.
      *
      * Note: Assignment also requires tutorial information
      */
@@ -431,7 +432,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Creates attendance record for a student in specified tutorial
+     * Creates attendance record for a student in specified tutorial.
      */
     public void addAttendance(Tutorial tutorial, Student student) throws ItemNotFoundException {
         setAttendance(new Attendance(tutorial, student));
@@ -446,7 +447,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Sets a student's attendance for a tutorial slot on a given week
+     * Sets a student's attendance for a tutorial slot on a given week.
      */
     private void setAttendance(Tutorial tutorial, int week, Student student, boolean isPresent)
                     throws ItemNotFoundException {
@@ -506,21 +507,21 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Marks student as present
+     * Marks student as present.
      */
     public void markAttendance(Tutorial tutorial, int week, Student student) throws ItemNotFoundException {
         setAttendance(tutorial, week, student, true);
     }
 
     /**
-     * Unmarks a student's attendance
+     * Unmarks a student's attendance.
      */
     public void unmarkAttendance(Tutorial tutorial, int week, Student student) throws ItemNotFoundException {
         setAttendance(tutorial, week, student, false);
     }
 
     /**
-     * Checks whether an attendance exists in the address book
+     * Checks whether an attendance exists in the address book.
      */
     public boolean hasAttendance(Attendance attendance) {
         requireNonNull(attendance);
@@ -529,7 +530,7 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     /**
      * Creates a submission object for every assignment-student pair (if it doesn't
-     * already exists)
+     * already exists).
      */
     public void populateSubmissions() {
         for (var student : students) {

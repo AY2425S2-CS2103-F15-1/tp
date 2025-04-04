@@ -13,7 +13,7 @@ import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new MarkAttendanceCommand object
+ * Parses input arguments and creates a new MarkAttendanceCommand object.
  */
 public class MarkAttendanceCommandParser implements Parser<MarkAttendanceCommand> {
 

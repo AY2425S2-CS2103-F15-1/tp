@@ -40,7 +40,7 @@ public class ExportStudentsCommand extends Command {
     private List<Student> toExport;
 
     /**
-     * Creates a {@link ExportStudentsCommand} to export all students
+     * Creates a {@link ExportStudentsCommand} to export all students.
      */
     public ExportStudentsCommand() {
         this.tutorial = Optional.empty();
@@ -48,7 +48,7 @@ public class ExportStudentsCommand extends Command {
 
     /**
      * Creates a {@link ExportStudentsCommand} to export students from specified
-     * {@code Tutorial}
+     * {@code Tutorial}.
      */
     public ExportStudentsCommand(Tutorial tutorial) {
         requireNonNull(tutorial);

@@ -22,13 +22,13 @@ import seedu.address.model.uniquelist.exceptions.ItemNotFoundException;
  * The API of the Model component.
  */
 public interface Model {
-    /** {@code Predicate} that always evaluate to true */
+    /** {@code Predicate} that always evaluate to true. */
     Predicate<Student> PREDICATE_SHOW_ALL_STUDENTS = unused -> true;
 
-    /** {@code Predicate} that always evaluate to true */
+    /** {@code Predicate} that always evaluate to true. */
     Predicate<Tutorial> PREDICATE_SHOW_ALL_TUTORIALS = unused -> true;
 
-    /** {@code Predicate} that always evaluate to true */
+    /** {@code Predicate} that always evaluate to true. */
     Predicate<Attendance> PREDICATE_SHOW_ALL_ATTENDANCES = unused -> true;
 
     /**
@@ -76,7 +76,7 @@ public interface Model {
      */
     void setAddressBook(ReadOnlyAddressBook addressBook);
 
-    /** Returns the AddressBook */
+    /** Returns the AddressBook. */
     ReadOnlyAddressBook getAddressBook();
 
     /**
@@ -115,7 +115,7 @@ public interface Model {
     void setStudent(Student target, Student editedStudent) throws DuplicateItemException, ItemNotFoundException;
 
     /**
-     * Adds a tutorial slot
+     * Adds a tutorial slot.
      */
     void addTutorial(Tutorial tutorial);
 
@@ -128,54 +128,54 @@ public interface Model {
     void setTutorial(Tutorial target, Tutorial editedTutorial) throws DuplicateItemException, ItemNotFoundException;
 
     /**
-     * Deletes a tutorial slot
+     * Deletes a tutorial slot.
      */
     void deleteTutorial(Tutorial tutorial);
 
     /**
-     * Deletes a tutorial from all students that were allocated to it
+     * Deletes a tutorial from all students that were allocated to it.
      */
     void deleteTutorialFromStudents(Tutorial tutorial);
 
     /**
-     * Checks whether tutorial exists in the address book
+     * Checks whether tutorial exists in the address book.
      */
     boolean hasTutorial(Tutorial tutorial);
 
     /**
-     * Sets submission status
+     * Sets submission status.
      */
     void setSubmissionStatus(String tutorialName, String assignmentName, String studentName, SubmissionStatus status)
                     throws ItemNotFoundException, CommandException;
 
     /**
-     * Adds an assignment to tutorial slot
+     * Adds an assignment to tutorial slot.
      */
     void addAssignment(Assignment assignment) throws ItemNotFoundException, DuplicateItemException;
 
     /**
-     * Creates attendance record for a student in specified tutorial
+     * Creates attendance record for a student in specified tutorial.
      */
     void addAttendance(Tutorial tutorial, Student student) throws ItemNotFoundException;
 
     /**
-     * Marks student as present
+     * Marks student as present.
      */
     void markAttendance(Tutorial tutorial, int week, Student student) throws ItemNotFoundException;
 
     /**
-     * Marks student as absent
+     * Marks student as absent.
      */
     void unmarkAttendance(Tutorial tutorial, int week, Student student) throws ItemNotFoundException;
 
     /**
-     * Checks whether an attendance exists in the address book
+     * Checks whether an attendance exists in the address book.
      */
     public boolean hasAttendance(Attendance attendance);
 
     /**
      * Returns an unmodifiable view of the list of {@code Student} backed by the
-     * internal list of {@code versionedAddressBook}
+     * internal list of {@code versionedAddressBook}.
      */
     ObservableList<Student> getFilteredStudentList();
 
@@ -199,7 +199,7 @@ public interface Model {
 
     /**
      * Returns an unmodifiable view of the list of {@code Tutorial} backed by the
-     * internal list of {@code versionedAddressBook}
+     * internal list of {@code versionedAddressBook}.
      */
     ObservableList<Tutorial> getFilteredTutorialList();
 
@@ -214,13 +214,13 @@ public interface Model {
 
     /**
      * Returns an unmodifiable view of the list of {@code Attendance} backed by the
-     * internal list of {@code versionedAddressBook}
+     * internal list of {@code versionedAddressBook}.
      */
     ObservableList<Attendance> getFilteredAttendanceList();
 
     /**
      * Returns an unmodifiable view of the list of {@link Submission} backed by the
-     * internal list of {@code versionedAddressBook}
+     * internal list of {@code versionedAddressBook}.
      */
     ObservableList<Submission> getFilteredSubmissionList();
 
@@ -241,14 +241,14 @@ public interface Model {
 
     /**
      * Returns an unmodifiable view of the list of TutorialWithStudents by mapping
-     * tutorials to their respective students
+     * tutorials to their respective students.
      *
      * @return An observable list of TutorialWithStudents
      */
     ObservableList<TutorialWithStudents> getFilteredTutorialWithStudents();
 
     /**
-     * Retrieves students who are enrolled in the given tutorial
+     * Retrieves students who are enrolled in the given tutorial.
      *
      * @param tutorial
      *            The tutorial to filter students for.

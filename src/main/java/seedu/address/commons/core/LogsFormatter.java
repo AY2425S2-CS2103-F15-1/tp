@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
+/**
+ * A logs colorizer.
+ */
 public class LogsFormatter extends Formatter {
     // ANSI escape code
     public static final String ANSI_RESET = "\033[0m";
@@ -51,8 +54,9 @@ public class LogsFormatter extends Formatter {
             builder.append("\t");
             for (int i = 0; i < params.length; i++) {
                 builder.append(params[i]);
-                if (i < params.length - 1)
+                if (i < params.length - 1) {
                     builder.append(", ");
+                }
             }
         }
 

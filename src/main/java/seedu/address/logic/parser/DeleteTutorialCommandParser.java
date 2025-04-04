@@ -9,7 +9,8 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Parses input arguments and creates a new {@link DeleteTutorialCommand} object
+ * Parses input arguments and creates a new {@link DeleteTutorialCommand}
+ * object.
  */
 public class DeleteTutorialCommandParser implements Parser<DeleteTutorialCommand> {
 

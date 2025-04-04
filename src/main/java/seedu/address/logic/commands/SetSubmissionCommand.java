@@ -14,7 +14,7 @@ import seedu.address.model.submission.SubmissionStatus;
 import seedu.address.model.uniquelist.exceptions.ItemNotFoundException;
 
 /**
- * Creates a new submission
+ * Creates a new submission.
  */
 public class SetSubmissionCommand extends Command {
 
@@ -29,7 +29,7 @@ public class SetSubmissionCommand extends Command {
     private final SubmissionStatus status;
 
     /**
-     * Creates a {@link SetSubmissionCommand} object
+     * Creates a {@link SetSubmissionCommand} object.
      */
     public SetSubmissionCommand(String tutorialName, String assignmentName, List<String> studentList,
                     SubmissionStatus status) {

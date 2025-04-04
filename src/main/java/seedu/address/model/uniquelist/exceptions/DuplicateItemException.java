@@ -4,7 +4,7 @@ import seedu.address.model.uniquelist.UniqueList;
 
 /**
  * Represents the exception thrown by {@link UniqueList} when an item is not
- * found
+ * found.
  */
 public class DuplicateItemException extends Exception {
     public DuplicateItemException() {

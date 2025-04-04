@@ -7,7 +7,7 @@ import seedu.address.model.Model;
 import seedu.address.model.NavigationMode;
 
 /**
- * Creates a new submission
+ * Creates a new submission.
  */
 public class ListSubmissionCommand extends Command {
 
@@ -20,7 +20,7 @@ public class ListSubmissionCommand extends Command {
     private final String assignmentName;
 
     /**
-     * Creates a {@link SetSubmissionCommand} object
+     * Creates a {@link SetSubmissionCommand} object.
      */
     public ListSubmissionCommand(String tutorialName, String studentName, String assignmentName) {
         this.tutorialName = tutorialName;

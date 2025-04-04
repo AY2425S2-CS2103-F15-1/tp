@@ -34,7 +34,7 @@ public class DeleteAssignmentCommand extends Command {
 
     /**
      * Creates a {@link DeleteAssignmentCommand} to delete the specified
-     * {@code Assignment}
+     * {@code Assignment}.
      */
     public DeleteAssignmentCommand(List<Index> indices, Assignment assignment) {
         requireNonNull(indices);

@@ -34,7 +34,7 @@ public class DeleteStudentFromTutorialCommand extends Command {
 
     /**
      * Creates an {@link DeleteStudentFromTutorialCommand} to add the specified
-     * {@code Tutorial}
+     * {@code Tutorial}.
      */
     public DeleteStudentFromTutorialCommand(List<Index> indices, Tutorial tutorial) {
         requireNonNull(indices);

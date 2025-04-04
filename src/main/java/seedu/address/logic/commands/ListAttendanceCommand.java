@@ -39,7 +39,7 @@ public class ListAttendanceCommand extends Command {
 
     /**
      * Creates a {@link ListAttendanceCommand} to view the attendance for a specific
-     * student or tutorial via an {@code Attendance} object
+     * student or tutorial via an {@code Attendance} object.
      */
     public ListAttendanceCommand(Optional<Index> index) {
         requireNonNull(index);

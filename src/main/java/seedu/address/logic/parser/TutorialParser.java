@@ -16,7 +16,7 @@ import seedu.address.logic.commands.ListTutorialCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new {@link Command} object
+ * Parses input arguments and creates a new {@link Command} object.
  */
 public class TutorialParser implements Parser<Command> {
 

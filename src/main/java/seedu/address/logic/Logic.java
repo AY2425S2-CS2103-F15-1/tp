@@ -17,7 +17,7 @@ import seedu.address.model.tutorial.Tutorial;
 import seedu.address.model.tutorial.TutorialWithStudents;
 
 /**
- * API of the Logic component
+ * API of the Logic component.
  */
 public interface Logic {
     /**
@@ -40,21 +40,21 @@ public interface Logic {
      */
     ReadOnlyAddressBook getAddressBook();
 
-    /** Returns an unmodifiable view of the filtered list of students */
+    /** Returns an unmodifiable view of the filtered list of students. */
     ObservableList<Student> getFilteredStudentList();
 
-    /** Returns an unmodifiable view of the filtered list of tutorials */
+    /** Returns an unmodifiable view of the filtered list of tutorials. */
     ObservableList<Tutorial> getFilteredTutorialList();
 
-    /** Returns an unmodifiable view of the filtered list of attendances */
+    /** Returns an unmodifiable view of the filtered list of attendances. */
     ObservableList<Attendance> getFilteredAttendanceList();
 
     /**
-     * Returns an unmodifiable view of the filtered list of submissions
+     * Returns an unmodifiable view of the filtered list of submissions.
      */
     ObservableList<Submission> getFilteredSubmissionList();
 
-    /** Returns an unmodifiable view of the filtered list of tutorials */
+    /** Returns an unmodifiable view of the filtered list of tutorials. */
     ObservableList<TutorialWithStudents> getFilteredTutorialWithStudents();
 
     /**

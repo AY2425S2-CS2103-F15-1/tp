@@ -17,7 +17,7 @@ import seedu.address.model.uniquelist.exceptions.DuplicateItemException;
 import seedu.address.model.uniquelist.exceptions.ItemNotFoundException;
 
 /**
- * Adds an assignment to a tutorial
+ * Adds an assignment to a tutorial.
  */
 public class AddAssignmentCommand extends Command {
 
@@ -32,7 +32,8 @@ public class AddAssignmentCommand extends Command {
     private final List<Index> tutorialIdxList;
 
     /**
-     * Creates an {@link AddAssignmentCommand} to add the specified {@code Tutorial}
+     * Creates an {@link AddAssignmentCommand} to add the specified
+     * {@code Tutorial}.
      */
     public AddAssignmentCommand(List<Index> tutorialIdxList, Assignment assignment) {
         requireNonNull(assignment);

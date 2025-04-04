@@ -7,7 +7,7 @@ import seedu.address.model.tutorial.Assignment;
 import seedu.address.model.uniquelist.Identifiable;
 
 /**
- * Represents a submission made by the student
+ * Represents a submission made by the student.
  */
 public class Submission implements Identifiable<Submission> {
     private final Assignment assignment;
@@ -15,7 +15,7 @@ public class Submission implements Identifiable<Submission> {
     private SubmissionStatus status;
 
     /**
-     * Constructs a new {@link Submission} object
+     * Constructs a new {@link Submission} object.
      */
     public Submission(Assignment assignment, Student student, SubmissionStatus status) {
         this.assignment = assignment;

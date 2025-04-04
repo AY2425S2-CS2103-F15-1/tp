@@ -85,7 +85,7 @@ public class Student implements Identifiable<Student> {
 
     /**
      * Constructs a {@code Student} object with the provided required fields and
-     * details field
+     * details field.
      */
     public Student(Name name, StudentID studentId, Phone phone, Email email, TelegramHandle handle,
                     Set<Tutorial> tutorials, Details details) {
@@ -130,14 +130,14 @@ public class Student implements Identifiable<Student> {
     }
 
     /**
-     * Updates the tutorial set
+     * Updates the tutorial set.
      */
     public void setTutorials(Set<Tutorial> tutorials) {
         this.tutorials = tutorials;
     }
 
     /**
-     * Returns true if the student has the specified tutorial allocated
+     * Returns true if the student has the specified tutorial allocated.
      *
      */
     public boolean hasTutorial(Tutorial tutorial) {
@@ -146,7 +146,7 @@ public class Student implements Identifiable<Student> {
 
     /**
      * Removes invalid tutorials from the student if it doesn't exist in
-     * {@code validTuts}
+     * {@code validTuts}.
      *
      * @param validTuts
      *            Set of valid tutorials
@@ -164,7 +164,7 @@ public class Student implements Identifiable<Student> {
     }
 
     /**
-     * Adds an attendance record for the student
+     * Adds an attendance record for the student.
      *
      * @param attendance
      *            Attendance object
@@ -174,7 +174,7 @@ public class Student implements Identifiable<Student> {
     }
 
     /**
-     * Returns a list of attendances owned by the student
+     * Returns a list of attendances owned by the student.
      */
     public List<Attendance> getAttendances() {
         return this.attendances;
@@ -242,7 +242,7 @@ public class Student implements Identifiable<Student> {
     }
 
     /**
-     * Removes information relating to a turoail when a tutorial is removed
+     * Removes information relating to a turoail when a tutorial is removed.
      */
     public void removeTutorial(Tutorial tutorial) {
         tutorials.removeIf(t -> t.hasSameIdentity(tutorial));

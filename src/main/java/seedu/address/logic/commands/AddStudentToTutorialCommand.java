@@ -35,7 +35,7 @@ public class AddStudentToTutorialCommand extends Command {
 
     /**
      * Creates an {@link AddStudentToTutorialCommand} to add the specified
-     * {@code Tutorial}
+     * {@code Tutorial}.
      */
     public AddStudentToTutorialCommand(List<Index> indices, Tutorial tutorial) {
         requireNonNull(indices);

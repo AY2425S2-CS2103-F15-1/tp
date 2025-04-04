@@ -27,7 +27,7 @@ public class DeleteTutorialCommand extends Command {
 
     /**
      * Creates a {@link DeleteTutorialCommand} to delete the specified
-     * {@code Tutorial}
+     * {@code Tutorial}.
      */
     public DeleteTutorialCommand(Tutorial tutorial) {
         requireNonNull(tutorial);

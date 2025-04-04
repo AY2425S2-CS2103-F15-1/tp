@@ -27,7 +27,7 @@ public class CsvAdaptedTutorial {
     }
 
     /**
-     * Getters
+     * Getters.
      */
     public String getName() {
         return name;

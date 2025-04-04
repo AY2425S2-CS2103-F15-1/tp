@@ -7,7 +7,7 @@ import seedu.address.model.submission.Submission;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Unmodifiable view of an address book
+ * Unmodifiable view of an address book.
  */
 public interface ReadOnlyAddressBook {
 

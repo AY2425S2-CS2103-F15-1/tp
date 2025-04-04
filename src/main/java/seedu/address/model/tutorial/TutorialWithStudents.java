@@ -13,7 +13,7 @@ public class TutorialWithStudents {
     private final List<Student> students;
 
     /**
-     * Constructs a {@code TutorialWithStudents} object
+     * Constructs a {@code TutorialWithStudents} object.
      *
      * @param tutorial
      *            The tutorial associated with the students
@@ -26,7 +26,7 @@ public class TutorialWithStudents {
     }
 
     /**
-     * Returns the tutorial
+     * Returns the tutorial.
      *
      * @return The tutorial object
      */
@@ -35,7 +35,7 @@ public class TutorialWithStudents {
     }
 
     /**
-     * Returns the list of students in the tutorial
+     * Returns the list of students in the tutorial.
      *
      * @return A list of students associated with the tutorial
      */
@@ -67,7 +67,7 @@ public class TutorialWithStudents {
     }
 
     /**
-     * Returns a hash code value for the object
+     * Returns a hash code value for the object.
      *
      * @return a hash code value for this object.
      */

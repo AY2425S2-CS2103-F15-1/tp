@@ -12,7 +12,7 @@ import seedu.address.model.uniquelist.Identifiable;
 import seedu.address.model.uniquelist.UniqueList;
 
 /**
- * Object that represents an {@code Assignment}
+ * Object that represents an {@code Assignment}.
  *
  * @param name
  *            name of assignment

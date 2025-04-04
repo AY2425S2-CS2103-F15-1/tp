@@ -32,7 +32,7 @@ public class UniqueList<T extends Identifiable<T>> implements List<T> {
     }
 
     /**
-     * Constructs a UniqueList from the given list
+     * Constructs a UniqueList from the given list.
      */
     public UniqueList(List<T> list) {
         if (!areItemsUnique(list)) {
@@ -89,7 +89,7 @@ public class UniqueList<T extends Identifiable<T>> implements List<T> {
     }
 
     /**
-     * Returns specified object in the list
+     * Returns specified object in the list.
      */
     public Optional<T> find(T obj) {
         return internalList.stream().filter(x -> x.hasSameIdentity(obj)).findAny();
@@ -223,7 +223,7 @@ public class UniqueList<T extends Identifiable<T>> implements List<T> {
     }
 
     /**
-     * Adds an item into the list; Item must not already exist in the list
+     * Adds an item into the list; Item must not already exist in the list.
      */
     @Override
     public boolean add(T toAdd) {

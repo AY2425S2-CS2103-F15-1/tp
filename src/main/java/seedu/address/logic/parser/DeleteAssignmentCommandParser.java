@@ -14,7 +14,7 @@ import seedu.address.model.tutorial.Assignment;
 
 /**
  * Parses input arguments and creates a new {@link DeleteAssignmentCommand}
- * object
+ * object.
  */
 public class DeleteAssignmentCommandParser implements Parser<DeleteAssignmentCommand> {
 

@@ -27,7 +27,7 @@ public class ExportCommand extends Command {
                     + "insufficient permissions to write to the file or the folder.";
 
     /**
-     * Creates an {@link ExportCommand} to export the specified list
+     * Creates an {@link ExportCommand} to export the specified list.
      */
     public ExportCommand() {
     }

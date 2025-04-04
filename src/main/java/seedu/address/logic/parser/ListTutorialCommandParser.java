@@ -6,7 +6,7 @@ import seedu.address.logic.commands.ListTutorialCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new {@link ListTutorialCommand} object
+ * Parses input arguments and creates a new {@link ListTutorialCommand} object.
  */
 public class ListTutorialCommandParser implements Parser<ListTutorialCommand> {
 

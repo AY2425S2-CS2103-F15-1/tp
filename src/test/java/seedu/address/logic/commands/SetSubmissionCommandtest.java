@@ -15,13 +15,13 @@ import seedu.address.model.UserPrefs;
 import seedu.address.model.submission.SubmissionStatus;
 
 /**
- * Consists of tests for the SetSubmissionCommand class
+ * Consists of tests for the SetSubmissionCommand class.
  */
 public class SetSubmissionCommandtest {
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     /**
-     * Tests that should fail if the student is not in the tutorial slot
+     * Tests that should fail if the student is not in the tutorial slot.
      */
     @Test
     public void execute_studentNotInTutorial_throwCommandException() throws CommandException {
@@ -35,7 +35,7 @@ public class SetSubmissionCommandtest {
     }
 
     /**
-     * Tests that should fail if the assignment not in tutorial
+     * Tests that should fail if the assignment not in tutorial.
      */
     @Test
     public void execute_assignmentNotInTutorial_throwCommandException() throws CommandException {

@@ -2,7 +2,7 @@ package seedu.address.logic.parser;
 
 /**
  * Contains Command Line Interface (CLI) syntax definitions common to multiple
- * commands
+ * commands.
  */
 public class CliSyntax {
 

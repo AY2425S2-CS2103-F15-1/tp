@@ -168,7 +168,7 @@ public class ParserUtil {
 
     /**
      * Parses datetime string into {@link LocalDateTime} while supporting a few
-     * formats of date time
+     * formats of date time.
      *
      * @param input
      * @return

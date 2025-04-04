@@ -13,7 +13,7 @@ import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Parses input arguments and creates a new DeleteStudentFromTutorialCommand
- * object
+ * object.
  */
 public class DeleteStudentFromTutorialCommandParser implements Parser<DeleteStudentFromTutorialCommand> {
 

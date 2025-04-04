@@ -16,7 +16,7 @@ import seedu.address.model.tutorial.Tutorial;
 import seedu.address.model.uniquelist.exceptions.ItemNotFoundException;
 
 /**
- * Unmarks a student's attendance
+ * Unmarks a student's attendance.
  */
 public class UnmarkAttendanceCommand extends Command {
 
@@ -44,7 +44,7 @@ public class UnmarkAttendanceCommand extends Command {
 
     /**
      * Creates an {@link UnmarkAttendanceCommand} to unmark the specified attendance
-     * {@code Attendance}
+     * {@code Attendance}.
      */
     public UnmarkAttendanceCommand(int week, List<Index> indices) {
         this.week = week;

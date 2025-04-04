@@ -24,7 +24,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.exceptions.DataLoadingException;
 
 /**
- * Converts a Java object instance to JSON and vice versa
+ * Converts a Java object instance to JSON and vice versa.
  */
 public class JsonUtil {
 
@@ -100,7 +100,7 @@ public class JsonUtil {
     }
 
     /**
-     * Converts a given string representation of a JSON data to instance of a class
+     * Converts a given string representation of a JSON data to instance of a class.
      *
      * @param <T>
      *            The generic type to create an instance of
@@ -111,7 +111,8 @@ public class JsonUtil {
     }
 
     /**
-     * Converts a given instance of a class into its JSON data string representation
+     * Converts a given instance of a class into its JSON data string
+     * representation.
      *
      * @param instance
      *            The T object to be converted into the JSON string
@@ -138,7 +139,7 @@ public class JsonUtil {
         }
 
         /**
-         * Gets the logging level that matches loggingLevelString
+         * Gets the logging level that matches loggingLevelString.
          * <p>
          * Returns null if there are no matches
          *

@@ -24,7 +24,7 @@ import seedu.address.model.student.TelegramHandle;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Parses input arguments and creates a new AddCommand object
+ * Parses input arguments and creates a new AddCommand object.
  */
 public class AddCommandParser implements Parser<AddCommand> {
 

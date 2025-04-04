@@ -40,7 +40,7 @@ public class CsvAdaptedStudent {
     }
 
     /**
-     * Getters
+     * Getters.
      */
     public String getName() {
         return name;
@@ -62,7 +62,7 @@ public class CsvAdaptedStudent {
     }
 
     /**
-     * Join tutorials by appropriate separator for CSV-friendly list
+     * Join tutorials by appropriate separator for CSV-friendly list.
      */
     public String joinTutorials(Student source) {
         return source.getTutorials().stream().map(Tutorial::toString).collect(Collectors.joining(TUTORIALS_SEPARATOR));

@@ -10,7 +10,7 @@ import seedu.address.model.uniquelist.UniqueList;
 import seedu.address.model.uniquelist.exceptions.DuplicateItemException;
 
 /**
- * Represents a tutorial
+ * Represents a tutorial.
  */
 public record Tutorial(String name, UniqueList<Assignment> assignments,
                 UniqueList<Attendance> attendances) implements Identifiable<Tutorial> {
@@ -28,7 +28,7 @@ public record Tutorial(String name, UniqueList<Assignment> assignments,
     }
 
     /**
-     * Creates a new {@code Tutorial} object
+     * Creates a new {@code Tutorial} object.
      *
      * @param name
      *            name of the tutorial
@@ -43,7 +43,7 @@ public record Tutorial(String name, UniqueList<Assignment> assignments,
     }
 
     /**
-     * Adds assignments to tutorial
+     * Adds assignments to tutorial.
      *
      * @param assignment
      *            Assignment to add
@@ -79,7 +79,7 @@ public record Tutorial(String name, UniqueList<Assignment> assignments,
     }
 
     /**
-     * Checks whether the given name is valid
+     * Checks whether the given name is valid.
      */
     public static boolean isValidName(String name) {
         Objects.requireNonNull(name);
@@ -89,14 +89,14 @@ public record Tutorial(String name, UniqueList<Assignment> assignments,
     }
 
     /**
-     * Adds attendance
+     * Adds attendance.
      */
     public void addAttendance(Attendance attendance) {
         this.attendances.add(attendance);
     }
 
     /**
-     * Removes information related to student when student is removed
+     * Removes information related to student when student is removed.
      */
     public void removeStudent(Student student) {
         attendances.removeIf(a -> a.student().hasSameIdentity(student));

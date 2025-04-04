@@ -6,7 +6,7 @@ package seedu.address.model.uniquelist;
  */
 public interface Identifiable<T> {
     /**
-     * Checks if an entity has the same identifier as the other entity
+     * Checks if an entity has the same identifier as the other entity.
      */
     boolean hasSameIdentity(T other);
 }

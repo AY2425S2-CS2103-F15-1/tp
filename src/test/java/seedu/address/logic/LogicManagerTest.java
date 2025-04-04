@@ -90,7 +90,7 @@ public class LogicManagerTest {
     }
 
     /**
-     * Executes the command and confirms that - no exceptions are thrown <br>
+     * Executes the command and confirms that - no exceptions are thrown. <br>
      * - the feedback message is equal to {@code expectedMessage} <br>
      * - the internal model manager state is the same as that in
      * {@code expectedModel} <br>
@@ -138,7 +138,7 @@ public class LogicManagerTest {
 
     /**
      * Executes the command and confirms that - the {@code expectedException} is
-     * thrown <br>
+     * thrown. <br>
      * - the resulting error message is equal to {@code expectedMessage} <br>
      * - the internal model manager state is the same as that in
      * {@code expectedModel} <br>
