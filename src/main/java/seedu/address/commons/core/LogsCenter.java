@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -61,7 +62,11 @@ public class LogsCenter {
         // the baseLogger level.
         Logger logger = Logger.getLogger(baseLogger.getName() + "." + name);
         removeHandlers(logger);
-        logger.setUseParentHandlers(true);
+        logger.setUseParentHandlers(false);
+        ConsoleHandler handler = new ConsoleHandler();
+        Formatter formatter = new LogsFormatter();
+        handler.setFormatter(formatter);
+        logger.addHandler(handler);
         return logger;
     }
 
@@ -109,5 +114,4 @@ public class LogsCenter {
             logger.warning("Error adding file handler for logger.");
         }
     }
-
 }
