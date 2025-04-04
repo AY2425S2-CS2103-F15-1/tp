@@ -430,5 +430,9 @@
     <!-- Checks that every public class, enumeration and interface has a header comment. -->
     <module name="MissingJavadocType"/>
 
+    <!-- Checks every javadoc comment ends with a full stop. -->
+    <module name="JavadocStyle">
+      <property name="checkFirstSentence" value="true"/>
+    </module>
   </module>
 </module>
