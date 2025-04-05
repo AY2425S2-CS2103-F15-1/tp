@@ -32,6 +32,9 @@ public class AppParameters {
      */
     public static AppParameters parse(Application.Parameters parameters) {
         AppParameters appParameters = new AppParameters();
+        if (parameters == null) {
+            return appParameters;
+        }
         Map<String, String> namedParameters = parameters.getNamed();
 
         String configPathParameter = namedParameters.get("config");
